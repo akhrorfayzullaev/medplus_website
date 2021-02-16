@@ -234,7 +234,7 @@ ul {
 }
 
 .abilities .head-info h1 {
-  font-size: 3rem;
+  font-size: 3.5rem;
 }
 .head-info h1,
 .head-info p{
@@ -242,7 +242,13 @@ ul {
 }
 
 .head-info p{
-  padding-bottom: 30px;
+  padding: 15px 25px;
+  margin-top: 50px;
+  box-shadow: 0 0 20px #4c6ca0;
+  border-radius: 10px;
+  font-size: 1rem;
+  background: linear-gradient(45deg,#192334, #0c7588);
+  color: white;
 }
 
 .flex-container {
@@ -265,6 +271,7 @@ ul {
 
 .abilities .flex-items  i{
   padding: 12px 15px;
+  margin:5px 2px;
   border-radius: 100px;
   background: #73a2ee;
   transition: all 0.2s;
@@ -417,7 +424,7 @@ ul {
   padding: 30px;
   color: black;
   text-align: center;
-  font-size: 30px;
+  font-size: 50px;
   font-weight:bolder;
 
 }
