@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Medplus.uz | Медицинская информационная система</title>
+    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="stylesheet" href="./css/utilities.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"
+      integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w=="
+      crossorigin="anonymous"
+    />
+
+    <style>
+
+
+.text{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  font-family: 'Raleway' sans-serif;
+}
+.text .text-min{
+  text-align: center;
+}
+
+.text .text-max{
+  font-size: 5rem;
+  /* color: black; */
+  color: white;
+  font-weight: bold;
+}
+
+.text p{
+  padding-top: -100px;
+}
+.word {
+  position: absolute;
+  opacity: 0;
+  margin-left: -120px;
+  font-family: 'Railway' sans-serif;
+  font-size: 3rem;
+}
+
+.letter {
+  display: inline-block;
+  position: relative;
+  float: left;
+  transform: translateZ(25px);
+  transform-origin: 50% 50% 25px;
+}
+
+.letter.out {
+  transform: rotateX(90deg);
+  transition: transform 0.32s cubic-bezier(0.55, 0.055, 0.675, 0.19);
+}
+
+.letter.behind { transform: rotateX(-90deg); }
+
+.letter.in {
+  transform: rotateX(0deg);
+  transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+
+
+.belize { color: white; }
+
+    </style>
+  </head>
+  <body>
+    <!-- Header
+        ========= -->
+    <header id="hero">
+      <div id="navbar" class="navbar">
+        <div class="logo">
+          <!-- <img src="./img/logos/medplus-icon.png" alt="" /> -->
+          <h1><b><span>med</span>plus</b></h1>
+          <p><b>Медицинская информационная система</b></p>
+        </div>
+        <nav>
+          <ul>
+            <li>
+              <a href="#abilities"><b>Преимущества</b></a>
+            </li>
+            <li>
+              <a href=""><b>О Программе</b></a>
+            </li>
+            <li>
+              <a href="#news"><b>Новости</b></a>
+            </li>
+            <li>
+              <a href="#clients"><b>Наши Клиенты</b></a>
+            </li>
+            <li>
+              <a href="#contact"><b>Контакты</b></a>
+            </li>
+            <!-- <li><a href="">Демо Версия</a></li> -->
+            &nbsp &nbsp<i class="fas fa-phone-alt" >&nbsp +998 (90) 992 - 58 - 69</i>
+          </ul>
+
+        </nav>
+      </div>
+      <div class="content">
+        <!-- <h1><strong>Medplus.uz</strong></h1>
+        <p>Мы создадим порядок на Вашем предприятии!</p> -->
+          <!-- ========================================================================================================= -->
+        <div id="css-script-menu">
+          <div class="css-script-center">
+            
+            <div class="css-script-ads"><script type="text/javascript">
+        google_ad_client = "ca-pub-2783044520727903";
+        /* CSSScript Demo Page */
+        google_ad_slot = "3025259193";
+        google_ad_width = 728;
+        google_ad_height = 90;
+        //-->
+        </script>
+              <script type="text/javascript"
+        src="//pagead2.googlesyndication.com/pagead/show_ads.js">
+        </script></div>
+            <div class="css-script-clear"></div>
+          </div>
+        </div>
+        <div class="text">
+          <p class="text-max"><b>Medplus.uz</b></p><br>
+          <p class="text-min"> 
+            <b><span class="word belize">Надежно</span></b>
+            <b><span class="word belize">Эффективно</span></b>
+            <b><span class="word belize">Выгодно</span></b>
+          </p>
+        </div>
+        <script>
+        var words = document.getElementsByClassName('word');
+        var wordArray = [];
+        var currentWord = 0;
+        
+        words[currentWord].style.opacity = 1;
+        for (var i = 0; i < words.length; i++) {
+          splitLetters(words[i]);
+        }
+        
+        function changeWord() {
+          var cw = wordArray[currentWord];
+          var nw = currentWord == words.length-1 ? wordArray[0] : wordArray[currentWord+1];
+          for (var i = 0; i < cw.length; i++) {
+            animateLetterOut(cw, i);
+          }
+          
+          for (var i = 0; i < nw.length; i++) {
+            nw[i].className = 'letter behind';
+            nw[0].parentElement.style.opacity = 1;
+            animateLetterIn(nw, i);
+          }
+          
+          currentWord = (currentWord == wordArray.length-1) ? 0 : currentWord+1;
+        }
+        
+        function animateLetterOut(cw, i) {
+          setTimeout(function() {
+            cw[i].className = 'letter out';
+          }, i*80);
+        }
+        
+        function animateLetterIn(nw, i) {
+          setTimeout(function() {
+            nw[i].className = 'letter in';
+          }, 340+(i*80));
+        }
+        
+        function splitLetters(word) {
+          var content = word.innerHTML;
+          word.innerHTML = '';
+          var letters = [];
+          for (var i = 0; i < content.length; i++) {
+            var letter = document.createElement('span');
+            letter.className = 'letter';
+            letter.innerHTML = content.charAt(i);
+            word.appendChild(letter);
+            letters.push(letter);
+          }
+          
+          wordArray.push(letters);
+        }
+        
+        changeWord();
+        setInterval(changeWord, 4000);
+        
+        </script>
+        <script>
+          (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+          (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+          })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+        
+          ga('create', 'UA-46156385-1', 'cssscript.com');
+          ga('send', 'pageview');
+        
+        </script>
+        <!-- ============================================================================================================ -->
+        <p>Мы создадим порядок на Вашем предприятии!</p>
+        <div class="button-container">
+          <a class="left-button" href="#"><b>MEDPLUS - ЭТО</b></a>
+          <a class="right-button" href="#"><b>ВХОД В ДЕМО ВЕРСИЮ </b><i class="fas fa-arrow-circle-right"></i></a>
+        </div>
+      </div>
+    </header>
+
+    <!-- Main 
+      ================================= -->
+    <main>
+      <!-- Abilities
+        ============ -->
+      <section id="abilities" class="abilities">
+        <div class="container">
+          <div class="ability-info">
+            <div class="head-info">
+              <h1>ПРЕИМУЩЕСТВА ПРОГРАММЫ</h1>
+              <p><b>
+                Сегодня на рынке медицинских программ представлены программы,
+                которые, ведут учет только одного из подразделений клиники и
+                вида документации. Однако, описанные ниже преимущества программы
+                медицинского учета «Med+» помогают полностью организовать работу
+                всего медицинского учреждения и грамотно автоматизировать учет
+                всех документов.</b>
+              </p>
+            </div>
+            <div class="flex-container">
+              <div class="flex-items">
+                <i class="fas fa-database fa-3x"></i>
+                <h3>Единая база пациентов</h3>
+                <!-- 1 -->
+                <p><b>
+                  Программа позволяет регистрировать неограниченное число
+                  пациентов. В базу данных пациентов вводится и сохраняется имя,
+                  адрес, телефон и прочие заметки о клиенте. Поиск всех данных
+                  достаточно облегчен и не составляет трудностей.</b>
+                </p>
+              </div>
+              <div class="flex-items">
+                <i class="fas fa-money-bill-alt fa-3x"></i>
+                <h3>Приём оплаты</h3>
+                <!-- 2 -->
+                <p><b>
+                  Программа для медицины автоматизирует рабочее место кассира и
+                  позволяет вести регистрацию сразу нескольких касс.
+                  Поддерживает наличный и безналичный расчёт, а также ведёт учет
+                  задолженности или предоплаты по каждому пациенту.</b>
+                </p>
+              </div>
+              <div class="flex-items">
+                <i class="fas fa-user-md fa-3x"></i>
+                <h3>Учёт по сотрудникам</h3>
+                <!-- 3 -->
+                <p><b>
+                  Автоматизация клиники при помощи данной программы помогает
+                  поддерживать учет фиксированной и сдельной оплаты труда
+                  сотрудников, рассчитывает долю и индивидуальный процент
+                  каждого сотрудника в общей сумме доходов предприятия.</b>
+                </p>
+              </div>
+              <div class="flex-items">
+                <i class="far fa-hdd fa-3x"></i>
+                <!-- 4 -->
+                <h3>Электронная история болезни</h3>
+                <p><b>
+                  В электронную медицинскую карту пациента, которая
+                  предусмотрена в программе, вводятся результаты всех приемов
+                  врачей, указываются жалобы, описание болезни и жизни, текущий
+                  статус. Карту можно легко найти и вывести на печать.</b>
+                </p>
+              </div>
+
+              <div class="flex-items">
+                <i class="fas fa-print fa-3x"></i>
+                <!-- 5 -->
+                <h3>Автоматизация УЗИ</h3>
+                <p><b>
+                  Программа для медицины ведёт регистрацию результатов
+                  ультразвуковых исследований. Шаблоны заполнения и заключения
+                  на каждый вид УЗИ уже введены в программу и автоматически
+                  происходит формирование бланков и вывода их на печать.</b>
+                </p>
+              </div>
+
+              <div class="flex-items">
+                <i class="fas fa-file-alt fa-3x"></i>
+                <!-- 6 -->
+                <h3>Автоматизация лаборатории</h3>
+                <p><b>
+                  Медицинское программное обеспечение полностью автоматизирует
+                  учет лабораторных данных: в шаблоны и в печатные формы на
+                  каждый вид анализа регистрируются все лабораторные
+                  исследования, которые потом может просмотреть врач.</b>
+                </p>
+              </div>
+
+              <div class="flex-items">
+                <i class="fas fa-passport fa-3x"></i>  <!-- 7 -->
+                <h3>Управленческая отчетность</h3>
+                <p><b>
+                  Автоматизация клиники с помощью этой программы позволяет
+                  сформировать статистику по каждой продаваемой услуге и
+                  категории услуг, дать анализ доходов и расходов по
+                  сотрудникам, выявить самых выгодных клиентов и их пожелания.</b>
+                </p>
+              </div>
+
+              <div class="flex-items">
+                <i class="fas fa-lock fa-3x"></i>  <!-- 8 -->
+                <h3>Доступ к данным</h3>
+                <p><b>
+                  В программе может работать один или несколько пользователей
+                  одновременно при помощи локальной сети или Интернета. Каждый
+                  сотрудник имеет индивидуальные права доступа к базе данных
+                  пациентов и видит только нужную ему информацию.</b>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+        <!-- About 
+        ================ -->
+      <section id="about" class="about">
+          <div class="container">
+          <div class="about-container">
+              <h1>Мы в цифрах</h1>
+              <div class="about-info">
+                <div class="amount">
+                  <h2>Более 300</h2>
+                  <p>постоянных клиентов</p>
+                </div>
+                <div class="since">
+                  <h2>С 2012 года</h2>
+                  <p>на рынке</p>
+                </div>
+              </div>
+          </div>
+        </div>
+      </section>
+
+      <hr>
+
+
+
+
+      <!-- News
+        ================= -->
+        <section id="news" class="news">
+          <div class="container">
+            <div class="news-area">
+              <h1>Последние новости <i class="fas fa-history "></i></h1><hr>
+                <div class="news-conrainer">
+
+
+                  <div class="news-panel">
+                    <div class="news-image">
+                      <img src="./img/news/cashbox.png"  alt="">
+                    </div>
+                    <div class="news-content">
+                        <h4>17.07.2014</h4>
+                        <h1>Возможность подключения виртуальной кассы.</h1>
+                        <!-- <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eos mollitia at vero distinctio inventore, ex deleniti repellendus ea animi qui soluta laudantium, voluptate dicta adipisci Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nam nostrum aspernatur, pariatur vel minima, vitae ipsa ex nisi, mollitia alias ab quae? Dolorem libero porro repudiandae? Ex laborum dolore incidunt. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Earum doloremque quis vitae animi incidunt dicta voluptatem impedit cupiditate necessitatibus quas, iure sint eligendi similique, voluptates at autem quibusdam numquam repudiandae! rerum repellat accusamus perspiciatis fugiat?</p> -->
+                    </div>
+                  </div>
+                  <hr>
+
+
+
+                  <div class="news-panel">
+                    <div class="news-image">
+                      <img src="./img/news/lisphoto1.jpg"  alt="">
+                    </div>
+                    <div class="news-content">
+                        <h4>25.01.2010</h4>
+                        <h1>Автоматизация Лаборатории. LIS</h1>
+                        <!-- <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eos mollitia at vero distinctio inventore, ex deleniti repellendus ea animi qui soluta laudantium, voluptate dicta adipisci Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nam nostrum aspernatur, pariatur vel minima, vitae ipsa ex nisi, mollitia alias ab quae? Dolorem libero porro repudiandae? Ex laborum dolore incidunt. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Earum doloremque quis vitae animi incidunt dicta voluptatem impedit cupiditate necessitatibus quas, iure sint eligendi similique, voluptates at autem quibusdam numquam repudiandae! rerum repellat accusamus perspiciatis fugiat?</p> -->
+                    </div>
+                  </div>
+                  <hr>
+
+
+
+                  <div class="news-panel">
+                    <div class="news-image">
+                      <img src="./img/news/reception.jpg"  alt="">
+                    </div>
+                    <div class="news-content">
+                        <h4>21.10.2011</h4>
+                        <h1>Быстрая регистрирация</h1>
+                        <!-- <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eos mollitia at vero distinctio inventore, ex deleniti repellendus ea animi qui soluta laudantium, voluptate dicta adipisci Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nam nostrum aspernatur, pariatur vel minima, vitae ipsa ex nisi, mollitia alias ab quae? Dolorem libero porro repudiandae? Ex laborum dolore incidunt. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Earum doloremque quis vitae animi incidunt dicta voluptatem impedit cupiditate necessitatibus quas, iure sint eligendi similique, voluptates at autem quibusdam numquam repudiandae! rerum repellat accusamus perspiciatis fugiat?</p> -->
+                    </div>
+                  </div>
+                  <hr>
+                </div>
+              
+            </div>
+          </div>
+        </section>
+        
+        
+        
+        
+        
+        <!-- Our clients 
+          ================= -->
+          <section id="clients" class="clients">
+            <div class="container">
+              <h1>Наши Клиенты</h1>
+              <div class="client-container">
+
+                <div class="client-items">
+                  <img src="./img/logos/shoxmainmed-removebg-preview.png" alt="">
+                </div>
+                
+                <div class="client-items">
+                  <img src="./img/logos/zdorovayamed-removebg-preview.png" alt="">
+                </div>
+
+                <div class="client-items">
+                  <img src="./img/logos/omegamed-removebg-preview.png" alt="">
+                </div>
+
+                <div class="client-items">
+                  <img src="./img/logos/global-logo.png" alt="">
+                </div>
+
+                <div class="client-items" style="border-radius: 50%;">
+                  <img src="./img/logos/nazar-logo.png" alt="">
+                </div>
+
+                <div class="client-items" >
+                  <img src="./img/logos/dmcmed-removebg-preview.png"  alt="">
+                </div>
+
+                <div class="client-items">
+                  <img src="./img/logos/sslab.png" alt="">
+                </div>
+
+                <div class="client-items">
+                  <img src="./img/logos/shoxmed-logo.png" alt="">
+                </div>
+
+                <div class="client-items">
+                  <img src="./img/logos/starmed-logo.png" alt="">
+                </div>
+
+                <div class="client-items">
+                  <img src="./img/logos/TTD.png" alt="">
+                </div>
+
+                <div class="client-items">
+                  <img src="./img/logos/darmon-logo-removebg-preview.png" alt="">
+                </div>
+
+                <div class="client-items">
+                  <img src="./img/logos/vivamed-removebg-preview.png" alt="">   
+                </div>
+                
+
+                <div class="client-items">
+                  <img src="./img/logos/medion-removebg-preview.png" alt="">
+                </div>
+
+                <div class="client-items">
+                  <img src="./img/logos/nora-med-logo.png" alt="">
+                </div>
+
+                <div class="client-items">
+                  <img src="./img/logos/shamsmed-removebg-preview.png" alt="">
+                </div>
+
+                <div class="client-items">
+                  <img src="./img/logos/healthfulmed-removebg-preview.png" alt="">
+                </div>
+
+                <div class="client-items">
+                  <img src="./img/logos/mediofarmmed-removebg-preview.png" alt="">
+                </div>
+
+                <div class="client-items">
+                  <img src="./img/logos/atd-logo.png" alt="">
+                </div>
+
+                <div class="client-items">
+                  <img src="./img/logos/alliancemed-removebg-preview.png" alt="">
+                </div>
+
+                <div class="client-items">
+                  <img src="./img/logos/alfamed-removebg-preview.png" alt="">
+                </div>
+
+                <div class="client-items">
+                  <img src="./img/logos/medlinemed-removebg-preview.png" alt="">
+                </div>
+
+                <div class="client-items">
+                  <img src="./img/logos/newmed-removebg-preview.png" alt="">
+                </div>
+
+                <div class="client-items">
+                  <img src="./img/logos/jacksoft-removebg-preview.png" alt="">
+                </div>
+
+                <div class="client-items">
+                  <img src="./img/logos/profmed-logo.png" alt="">
+                </div>
+              
+              </div>
+            </div>
+          </section>
+
+          <!-- Contact 
+          =========================== -->
+          <section id="contact">
+            
+            <div class="container">
+              <div class="contact-panel">
+
+                <div class="left-content">
+
+                  <div class="big-flex">
+                              <!-- middle flex -->
+                    <div class="middle-flex">
+                      <div class="small-flex">
+                        <i class="fas fa-map-marker-alt fa-2x"></i>
+                        <h2>Адрес</h2>
+                      </div>
+                      <h3>Loading . . . </h3>
+                    </div>
+
+
+                            <!-- middle flex -->
+                    <div class="middle-flex">
+                      <div class="small-flex">
+                        <i class="fas fa-phone-square-alt fa-2x"></i>
+                        <h2>Звоните по номеру</h2>
+                      </div>
+                     <h3 class="number">+998 90 992 58 69</h3>
+                    </div>
+
+
+                   <!-- middle flex -->
+                  <div class="middle-flex">
+                      <div class="small-flex">
+                        <i class="fas fa-envelope fa-2x"></i>
+                        <h2>Пишите нам</h2>
+                     </div>
+                      <h3>info@medplus.uz</h3>
+                  </div>
+
+
+                  </div>
+                </div>
+
+                <div class="right-content">
+                  
+              <h1>СВЯЗАТЬСЯ С НАМИ</h1>
+                
+                  <div class="form-control" >
+                    <label for="name"><b>Ваше имя (обязательно)</b></label><br>      
+                    <input type="text" id="name" name="name" placeholder="">
+                  </div>
+
+                  <div class="form-control" >
+                    <label for="email"><b>Ваш email (обязательно)</b></label><br>                
+                    <input type="email" id="email" name="email" placeholder="">
+                  </div>
+
+                  <div class="form-control" >
+                    <label for="message"><b>Сообщение</b></label><br>
+                    <textarea name="message" id="message" cols="30" rows="10" placeholder=" ...."></textarea>
+                  </div>
+
+                  <div class="btn">
+                      <a href=""><b>Отправить </b><i class="fas fa-paper-plane"></i></a>
+                  </div>
+                  
+                </div>
+
+
+              </div>
+            </div>
+          </section>
+    </main>
+
+
+    <!-- Footer -->
+    <footer >
+      <div class="container">
+        <div>
+          <h2>Мы социальных сетях</h2>
+          <a href="https://www.facebook.com/medplusuz/"><i class="fab fa-facebook-square fa-3x"></i></a>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
