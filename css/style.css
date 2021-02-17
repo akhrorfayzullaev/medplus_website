@@ -193,7 +193,7 @@ ul {
 .content .right-button {
   color: white;
   background: #449d44;
-  padding: 15px 35px;
+  padding: 15px 30px;
   border-radius: 5px;
   box-shadow: 0 0 5px black;
   transition: all 0.2s;
@@ -229,8 +229,11 @@ ul {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  text-align: center;
   margin-top: 90px;
+}
+ .head-info p,
+.head-info h1{
+  text-align: center;
 }
 
 .abilities .head-info h1 {
@@ -584,9 +587,117 @@ footer div i:hover{
 
 
 
+/* Media 
+=============================== */
+@media(max-width:768px){
+
+
+  /* Navbar 
+  ======================== */
+  .navbar{
+    flex-direction: column;
+    height: 120px;
+    padding: 20px;
+  }
+
+  .navbar .logo h1{
+    text-align: center;
+  }
+
+  .navbar a {
+    padding: 10px 10px;
+    margin: 0 3px;
+  }
+
+  .button-container a{
+    display: block;
+    margin-top: 10px;
+  }
 
 
 
+  /* Abilities
+  ======================= */
+  .ability-info .head-info h1{
+    font-size: 40px;
+    text-shadow: 0 0 40px #ddd;
+  }
+
+  .flex-container{
+    justify-content:center;
+    align-content: stretch;
+  }
+
+  .flex-items{
+    flex: 50%;
+    max-width: 40%;
+  }
+  
+  .flex-items{
+    text-align: center;
+}
+
+
+
+/* Contact 
+================================= */
+#contact {
+  padding-top:0
+}
+
+.contact-panel{
+  display: flex;
+  flex-direction: column;
+  justify-content:center;
+  padding-top: 80px;
+
+}
+
+#contact{
+  height: inherit;
+}
+
+
+.right-content h1{
+  text-align: center;
+  font-size: 30px;
+}
+
+.left-content .big-flex{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  padding-bottom:30px
+}
+
+.left-content{
+  text-align: center;
+}
+
+.address i{
+  color: red;
+}
+
+.phone i {
+  color: rgb(0, 255, 0);
+}
+
+.email i {
+  color: yellow;
+}
+
+.middle-flex i {
+  text-shadow: 0 0 5px white;
+}
+
+.middle-flex i:hover{
+  color: white;
+  text-shadow:0 0 15px red;
+}
+
+
+
+}
 
 
 
