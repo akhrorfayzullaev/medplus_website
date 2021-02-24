@@ -269,8 +269,13 @@ ul {
   background: white;
   border-radius: 10px;
   color: white;
-  box-shadow: 0 0 10px black;
+  transition: all 0.4s;
+  text-align: center;
 }
+.flex-items:hover{
+  box-shadow: 0 0 15px rgb(0, 0, 0);
+}
+
 
 .abilities .flex-items  i{
   padding: 12px 15px;
@@ -683,13 +688,11 @@ footer div i:hover{
   .flex-container .flex-items{
     flex: 100%;
     max-width: 100%;
-  }
-
-
-  .flex-items {
     text-align: center;
-
   }
+
+
+  
 
 
   /* About 
