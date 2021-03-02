@@ -221,7 +221,7 @@ ul {
 ================================= */
 
 .abilities {
-  background: #ccc;
+  background: white;
 }
 
 .abilities .ability-info {
@@ -266,7 +266,8 @@ ul {
   max-width: 25%;
   padding: 0 4px;
   margin: 5px 5px;
-  background: white;
+  background: rgb(175, 223, 255);
+  border: 1px solid #73a2ee;
   border-radius: 10px;
   color: white;
   transition: all 0.4s;
@@ -312,7 +313,7 @@ ul {
 ====================================*/
 
 .about {
-  background: #ccc;
+  background: white  ;
   color: black;
 }
 .about .about-container{
